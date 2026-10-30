@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<title>同樂小鎮 · 閱讀主題館（Sunnyside 風）</title>
+<title>主題閱讀鎮（Sunnyside 風）</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
 html,body{margin:0;height:100%;background:#16231a;overflow:hidden;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;color:#fff;touch-action:none}
@@ -73,13 +73,13 @@ input{-webkit-user-select:text;user-select:text}
 <div id="btnA">A</div>
 <div id="dlg" class="hidden"><div id="dTitle"></div><div id="dText"></div><div id="dOpts"></div></div>
 <div id="mini" class="hidden">
-  <div style="font-weight:900;font-size:18px">🗺️ 同樂小鎮全圖</div>
+  <div style="font-weight:900;font-size:18px">🗺️ 主題閱讀鎮全圖</div>
   <canvas id="miniC"></canvas>
   <div id="legend"></div>
   <div id="miniCap">點一下任意處關閉</div>
 </div>
 <div id="title">
-  <h1>同樂小鎮</h1>
+  <h1>主題閱讀鎮</h1>
   <h2>校園為主 · 社區街道為輔 · 閱讀主題館開幕</h2>
   <ul>
     <li>🕹️ 搖桿／方向鍵／WASD：移動</li>
@@ -469,7 +469,7 @@ const HAIR=['#2b1d14','#5a3a22','#1b1b1b','#8a5a2b','#c9a24a'];
 const SHIRT=['#3f84d4','#f1b630','#8e5bd6','#3fb55a','#e86a9a','#ff8a3d'];
 const PANTS=['#3a3f4a','#5a4632','#2f4f8f','#6b6f7a'];
 const LINES=[
- '同樂小鎮有 10 個黃色數字地標，答對問題就能拿到徽章喔！',
+ '主題閱讀鎮有 10 個黃色數字地標，答對問題就能拿到徽章喔！',
  '想看全圖嗎？按右上角的地圖鈕或 M 鍵就可以了。',
  '集合場中間的梅花廣場，是全校集合的好地方。',
  '禮堂常有歌仔戲展演，同樂國小的落地掃已經傳承十五年囉！',
@@ -541,7 +541,7 @@ function win(L){
 const confetti=[];
 function finale(){
   for(let i=0;i<140;i++)confetti.push({x:Math.random(),y:-Math.random()*.6,vx:(Math.random()-.5)*.15,vy:.18+Math.random()*.3,c:['#ff6f91','#ffd23f','#3fb55a','#3f84d4','#b78cff'][(Math.random()*5)|0],r:2+((Math.random()*3)|0)});
-  showDlg('🎉 恭喜完成！','你收集了全部 10 枚同樂徽章，成為同樂小鎮的小小導覽員！\n校園生活、歌仔戲與安全常識，你都學會了。',[{t:'繼續逛逛',f:closeDlg},{t:'重新開始',f:()=>{done.clear();save();updateHUD();buildLegend();closeDlg()}}]);
+  showDlg('🎉 恭喜完成！','你收集了全部 10 枚同樂徽章，成為主題閱讀鎮的小小導覽員！\n校園生活、歌仔戲與安全常識，你都學會了。',[{t:'繼續逛逛',f:closeDlg},{t:'重新開始',f:()=>{done.clear();save();updateHUD();buildLegend();closeDlg()}}]);
 }
 /* ================= 閱讀主題館 ================= */
 let rec={};try{rec=JSON.parse(localStorage.getItem(RSAVE)||'{}')||{}}catch(e){}
@@ -664,7 +664,7 @@ const ALINES={cow:['哞～哞～！我是同樂村的小牛。','今天的草好
 function talkNPC(n){
   if(n.animal){const L=ALINES[n.animal];showDlg(ANAME[n.animal],L[(n.line++)%L.length],[{t:'摸摸牠',f:closeDlg}]);return}
   const line=LINES[n.line%LINES.length];n.line++;
-  showDlg('🙂 小鎮居民',line,[{t:'好的，謝謝！',f:closeDlg}]);
+  showDlg('🙂 鎮上居民',line,[{t:'好的，謝謝！',f:closeDlg}]);
 }
 function nearest(){
   let best=null,bd=1e9;

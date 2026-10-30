@@ -1,5 +1,5 @@
 /**
- * 同樂小鎮・閱讀主題館 — Google 試算表連動（Apps Script）
+ * 主題閱讀鎮 — Google 試算表連動（Apps Script）
  * 1. 開一份新的 Google 試算表，建立兩個工作表：「成績」「題庫」
  * 2. 「題庫」第 1 列貼上標題：主題,難度,題目,正確答案,錯誤答案1,錯誤答案2,錯誤答案3,解析
  *    （可把 reading-bank-題庫範本.csv 整份匯入；老師改題目、加題目都在這裡）
@@ -39,7 +39,7 @@ function doGet(e) {
       .map(r => r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(',')).join('\n');
     return ContentService.createTextOutput(csv).setMimeType(ContentService.MimeType.CSV);
   }
-  return out_('同樂小鎮閱讀主題館 API 運作中');
+  return out_('主題閱讀鎮 API 運作中');
 }
 
 function out_(s) { return ContentService.createTextOutput(s); }

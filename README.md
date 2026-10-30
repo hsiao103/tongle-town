@@ -1,4 +1,4 @@
-# 同樂小鎮 · 閱讀主題館（v4，Sunnyside 風）
+# 主題閱讀鎮（v4，Sunnyside 風）
 
 ## 內容
 - `index.html`：遊戲本體（單一檔案，素材已內嵌，可直接雙擊開啟或放到 GitHub Pages）
